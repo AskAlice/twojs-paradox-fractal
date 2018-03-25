@@ -6,7 +6,8 @@ two = new Two(params).appendTo($('body')[0]);
 triangle = two.makePolygon($(window).height()/2,$(window).width()/2,100)
 two.bind('update', function(frameCount) {
 	two.clear();
-	triangle = two.makePolygon($(window).height()/4,$(window).width()/2,100,sides)
+	params = { width: $(window).width(), height: $(window).height() };
+	triangle = two.makePolygon(params.width/2,params.height/2,100,sides);
 
 	l = 200;
 	while(l>1){
