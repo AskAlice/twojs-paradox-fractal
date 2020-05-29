@@ -55,7 +55,9 @@ two.bind('update', function(frameCount) {
 	triangle = two.makePolygon((params.width/2),(params.height/2),prefs.size,prefs.sides);
 	params = { width: $(window).width(), height: $(window).height() };
 	triangle.fill='hsl(255,100%,50%)';
-		prefs.realFill=hsv2hsl(prefs.fill.h,prefs.fill.s,prefs.fill.v)
+	prefs.realFill = hsv2hsl(prefs.fill.h, prefs.fill.s, prefs.fill.v)
+	prefs.rotate += 0.5;
+    prefs.rotate %= 256
 
 	triangle.fill = 'hsla('+(100*t)%255+','+Math.floor(100*prefs.fill.s)+'%,'+Math.floor(100*prefs.fill.v)+'%,'+1/100*prefs.fillOpacity+')';
 	triangle.stroke = 'rgba('+100*Math.floor(1/100*prefs.stroke[0])+','+100*Math.floor(1/100*prefs.stroke[1])+','+100*Math.floor(1/100*prefs.stroke[2])+','+1/100*prefs.strokeOpacity+')';
